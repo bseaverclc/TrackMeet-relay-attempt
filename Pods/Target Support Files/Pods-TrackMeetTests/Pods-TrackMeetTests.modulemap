@@ -1,0 +1,6 @@
+framework module Pods_TrackMeetTests {
+  umbrella header "Pods-TrackMeetTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

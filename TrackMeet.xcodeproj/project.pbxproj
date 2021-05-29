@@ -1,0 +1,902 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03750B24869DFCC89848B744 /* Pods_TrackMeet_TrackMeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8774B062F0D38EFA7C1904A /* Pods_TrackMeet_TrackMeetUITests.framework */; };
+		854E9241E1F3DD1DFA501CF8 /* Pods_TrackMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFEE2A214640DA71E93BFFB /* Pods_TrackMeet.framework */; };
+		D3258ECA24BD239E00895910 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3258EC924BD239E00895910 /* LaunchViewController.swift */; };
+		D3258ECC24BD304B00895910 /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3258ECB24BD304B00895910 /* SchoolsViewController.swift */; };
+		D3366838247B08B2008EA70C /* Meet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3366837247B08B2008EA70C /* Meet.swift */; };
+		D3481B4F24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3481B4E24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift */; };
+		D3514F8525EC46C8005722BB /* AthleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3514F8425EC46C8005722BB /* AthleteTableViewCell.swift */; };
+		D361DB0324731403005EF1A2 /* addAthleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361DB0224731403005EF1A2 /* addAthleteViewController.swift */; };
+		D361DB0524735FA9005EF1A2 /* AthletesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361DB0424735FA9005EF1A2 /* AthletesViewController.swift */; };
+		D361DB072475741E005EF1A2 /* AddAthleteToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361DB062475741E005EF1A2 /* AddAthleteToEventViewController.swift */; };
+		D3647CCF2476EEAB000627C6 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3647CCE2476EEAB000627C6 /* ScoresViewController.swift */; };
+		D36BAF84247ABEDF00D71D4A /* AddMeetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BAF83247ABEDF00D71D4A /* AddMeetViewController.swift */; };
+		D37C7743251EB7070041131F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37C7742251EB7070041131F /* GoogleService-Info.plist */; };
+		D3A0B9CE24722B5B0088D664 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0B9CD24722B5B0088D664 /* TimeTableViewCell.swift */; };
+		D3A0B9D024723FDE0088D664 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0B9CF24723FDE0088D664 /* Athlete.swift */; };
+		D3A0B9D2247248500088D664 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0B9D1247248500088D664 /* EventsTableViewController.swift */; };
+		D3A0B9D62472EEF70088D664 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0B9D52472EEF70088D664 /* HomeViewController.swift */; };
+		D3A97ADB261772EC00698FF0 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A97ADA261772EC00698FF0 /* School.swift */; };
+		D3B15B17247818F8000BCFC8 /* AthleteResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B15B16247818F8000BCFC8 /* AthleteResultsViewController.swift */; };
+		D3BF359724803BB9000736F8 /* MeetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF359624803BB9000736F8 /* MeetsViewController.swift */; };
+		D3D2DEE92471F5CB009C17DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2DEE82471F5CB009C17DD /* AppDelegate.swift */; };
+		D3D2DEEB2471F5CB009C17DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2DEEA2471F5CB009C17DD /* SceneDelegate.swift */; };
+		D3D2DEED2471F5CB009C17DD /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2DEEC2471F5CB009C17DD /* EventEditViewController.swift */; };
+		D3D2DEF02471F5CB009C17DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D2DEEE2471F5CB009C17DD /* Main.storyboard */; };
+		D3D2DEF32471F5CB009C17DD /* TrackMeet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3D2DEF12471F5CB009C17DD /* TrackMeet.xcdatamodeld */; };
+		D3D2DEF52471F5CC009C17DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D2DEF42471F5CC009C17DD /* Assets.xcassets */; };
+		D3D2DEF82471F5CC009C17DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D2DEF62471F5CC009C17DD /* LaunchScreen.storyboard */; };
+		D3D2DF032471F5CD009C17DD /* TrackMeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2DF022471F5CD009C17DD /* TrackMeetTests.swift */; };
+		D3D2DF0E2471F5CD009C17DD /* TrackMeetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2DF0D2471F5CD009C17DD /* TrackMeetUITests.swift */; };
+		D3DD29AB26508EC9002B51A4 /* RelayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD29AA26508EC9002B51A4 /* RelayViewController.swift */; };
+		D3DD29B0265093C8002B51A4 /* RelayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD29AF265093C8002B51A4 /* RelayTableViewCell.swift */; };
+		D3EF6D5426228310005B22FF /* CoachesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF6D5326228310005B22FF /* CoachesViewController.swift */; };
+		D3EF6D5C2622857D005B22FF /* CoachesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF6D5B2622857D005B22FF /* CoachesVC.swift */; };
+		D7BCEC935680614C55620B2A /* Pods_TrackMeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D2DB8E7D69C8D93636E095 /* Pods_TrackMeetTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3D2DEFF2471F5CD009C17DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3D2DEDD2471F5CB009C17DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3D2DEE42471F5CB009C17DD;
+			remoteInfo = TrackMeet;
+		};
+		D3D2DF0A2471F5CD009C17DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3D2DEDD2471F5CB009C17DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3D2DEE42471F5CB009C17DD;
+			remoteInfo = TrackMeet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		279EC12432497B565C1581BF /* Pods-TrackMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeet.debug.xcconfig"; path = "Target Support Files/Pods-TrackMeet/Pods-TrackMeet.debug.xcconfig"; sourceTree = "<group>"; };
+		3BA08D65C9C37FA82D8D1B6A /* Pods-TrackMeet-TrackMeetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeet-TrackMeetUITests.debug.xcconfig"; path = "Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BFEE2A214640DA71E93BFFB /* Pods_TrackMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66337F9E3A9EB668E20B8429 /* Pods-TrackMeet-TrackMeetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeet-TrackMeetUITests.release.xcconfig"; path = "Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68CF2B60EF06A7C9022401FA /* Pods-TrackMeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeet.release.xcconfig"; path = "Target Support Files/Pods-TrackMeet/Pods-TrackMeet.release.xcconfig"; sourceTree = "<group>"; };
+		7238FED4E7A870D22EA3A989 /* Pods-TrackMeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeetTests.release.xcconfig"; path = "Target Support Files/Pods-TrackMeetTests/Pods-TrackMeetTests.release.xcconfig"; sourceTree = "<group>"; };
+		7FAD7A7C2363ADDB0EE211C6 /* Pods-TrackMeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeetTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackMeetTests/Pods-TrackMeetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3258EC924BD239E00895910 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		D3258ECB24BD304B00895910 /* SchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
+		D3366837247B08B2008EA70C /* Meet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meet.swift; sourceTree = "<group>"; };
+		D3481B4E24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteResultsTableViewCell.swift; sourceTree = "<group>"; };
+		D3514F8425EC46C8005722BB /* AthleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteTableViewCell.swift; sourceTree = "<group>"; };
+		D361DB0224731403005EF1A2 /* addAthleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAthleteViewController.swift; sourceTree = "<group>"; };
+		D361DB0424735FA9005EF1A2 /* AthletesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletesViewController.swift; sourceTree = "<group>"; };
+		D361DB062475741E005EF1A2 /* AddAthleteToEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAthleteToEventViewController.swift; sourceTree = "<group>"; };
+		D3647CCE2476EEAB000627C6 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		D36BAF83247ABEDF00D71D4A /* AddMeetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeetViewController.swift; sourceTree = "<group>"; };
+		D36DD1DD263EC9C300829EDF /* TrackMeetDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrackMeetDebug.entitlements; sourceTree = "<group>"; };
+		D37C7742251EB7070041131F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3A0B9CD24722B5B0088D664 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		D3A0B9CF24723FDE0088D664 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		D3A0B9D1247248500088D664 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		D3A0B9D52472EEF70088D664 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3A0CCA0263D7F260083D474 /* TrackMeetRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrackMeetRelease.entitlements; sourceTree = "<group>"; };
+		D3A97ADA261772EC00698FF0 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		D3B15B16247818F8000BCFC8 /* AthleteResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteResultsViewController.swift; sourceTree = "<group>"; };
+		D3BF359624803BB9000736F8 /* MeetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetsViewController.swift; sourceTree = "<group>"; };
+		D3D2DEE52471F5CB009C17DD /* TrackMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D2DEE82471F5CB009C17DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3D2DEEA2471F5CB009C17DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D3D2DEEC2471F5CB009C17DD /* EventEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
+		D3D2DEEF2471F5CB009C17DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3D2DEF22471F5CB009C17DD /* TrackMeet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackMeet.xcdatamodel; sourceTree = "<group>"; };
+		D3D2DEF42471F5CC009C17DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3D2DEF72471F5CC009C17DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3D2DEF92471F5CC009C17DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D2DEFE2471F5CD009C17DD /* TrackMeetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackMeetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D2DF022471F5CD009C17DD /* TrackMeetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMeetTests.swift; sourceTree = "<group>"; };
+		D3D2DF042471F5CD009C17DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D2DF092471F5CD009C17DD /* TrackMeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackMeetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D2DF0D2471F5CD009C17DD /* TrackMeetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMeetUITests.swift; sourceTree = "<group>"; };
+		D3D2DF0F2471F5CD009C17DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3DD29AA26508EC9002B51A4 /* RelayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayViewController.swift; sourceTree = "<group>"; };
+		D3DD29AF265093C8002B51A4 /* RelayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayTableViewCell.swift; sourceTree = "<group>"; };
+		D3EF6D5326228310005B22FF /* CoachesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesViewController.swift; sourceTree = "<group>"; };
+		D3EF6D5B2622857D005B22FF /* CoachesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachesVC.swift; sourceTree = "<group>"; };
+		D9D2DB8E7D69C8D93636E095 /* Pods_TrackMeetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMeetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8774B062F0D38EFA7C1904A /* Pods_TrackMeet_TrackMeetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMeet_TrackMeetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3D2DEE22471F5CB009C17DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				854E9241E1F3DD1DFA501CF8 /* Pods_TrackMeet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D2DEFB2471F5CD009C17DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BCEC935680614C55620B2A /* Pods_TrackMeetTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D2DF062471F5CD009C17DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03750B24869DFCC89848B744 /* Pods_TrackMeet_TrackMeetUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B53F1EC186650B4DA3F448D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BFEE2A214640DA71E93BFFB /* Pods_TrackMeet.framework */,
+				F8774B062F0D38EFA7C1904A /* Pods_TrackMeet_TrackMeetUITests.framework */,
+				D9D2DB8E7D69C8D93636E095 /* Pods_TrackMeetTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3D2DEDC2471F5CB009C17DD = {
+			isa = PBXGroup;
+			children = (
+				D3D2DEE72471F5CB009C17DD /* TrackMeet */,
+				D3D2DF012471F5CD009C17DD /* TrackMeetTests */,
+				D3D2DF0C2471F5CD009C17DD /* TrackMeetUITests */,
+				D3D2DEE62471F5CB009C17DD /* Products */,
+				FEFCB3516AF6AAB6E7229F52 /* Pods */,
+				B53F1EC186650B4DA3F448D3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D3D2DEE62471F5CB009C17DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2DEE52471F5CB009C17DD /* TrackMeet.app */,
+				D3D2DEFE2471F5CD009C17DD /* TrackMeetTests.xctest */,
+				D3D2DF092471F5CD009C17DD /* TrackMeetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3D2DEE72471F5CB009C17DD /* TrackMeet */ = {
+			isa = PBXGroup;
+			children = (
+				D36DD1DD263EC9C300829EDF /* TrackMeetDebug.entitlements */,
+				D3A0CCA0263D7F260083D474 /* TrackMeetRelease.entitlements */,
+				D3D2DEEE2471F5CB009C17DD /* Main.storyboard */,
+				D3DD29AF265093C8002B51A4 /* RelayTableViewCell.swift */,
+				D3DD29AA26508EC9002B51A4 /* RelayViewController.swift */,
+				D3258EC924BD239E00895910 /* LaunchViewController.swift */,
+				D3258ECB24BD304B00895910 /* SchoolsViewController.swift */,
+				D3BF359624803BB9000736F8 /* MeetsViewController.swift */,
+				D36BAF83247ABEDF00D71D4A /* AddMeetViewController.swift */,
+				D3A0B9D52472EEF70088D664 /* HomeViewController.swift */,
+				D3A0B9D1247248500088D664 /* EventsTableViewController.swift */,
+				D3D2DEEC2471F5CB009C17DD /* EventEditViewController.swift */,
+				D3A0B9CD24722B5B0088D664 /* TimeTableViewCell.swift */,
+				D361DB062475741E005EF1A2 /* AddAthleteToEventViewController.swift */,
+				D3514F8425EC46C8005722BB /* AthleteTableViewCell.swift */,
+				D361DB0224731403005EF1A2 /* addAthleteViewController.swift */,
+				D3A97ADA261772EC00698FF0 /* School.swift */,
+				D3647CCE2476EEAB000627C6 /* ScoresViewController.swift */,
+				D3B15B16247818F8000BCFC8 /* AthleteResultsViewController.swift */,
+				D3481B4E24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift */,
+				D3366837247B08B2008EA70C /* Meet.swift */,
+				D3A0B9CF24723FDE0088D664 /* Athlete.swift */,
+				D361DB0424735FA9005EF1A2 /* AthletesViewController.swift */,
+				D3EF6D5B2622857D005B22FF /* CoachesVC.swift */,
+				D3EF6D5326228310005B22FF /* CoachesViewController.swift */,
+				D3D2DEEA2471F5CB009C17DD /* SceneDelegate.swift */,
+				D3D2DEE82471F5CB009C17DD /* AppDelegate.swift */,
+				D3D2DEF42471F5CC009C17DD /* Assets.xcassets */,
+				D3D2DEF62471F5CC009C17DD /* LaunchScreen.storyboard */,
+				D37C7742251EB7070041131F /* GoogleService-Info.plist */,
+				D3D2DEF92471F5CC009C17DD /* Info.plist */,
+				D3D2DEF12471F5CB009C17DD /* TrackMeet.xcdatamodeld */,
+			);
+			path = TrackMeet;
+			sourceTree = "<group>";
+		};
+		D3D2DF012471F5CD009C17DD /* TrackMeetTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2DF022471F5CD009C17DD /* TrackMeetTests.swift */,
+				D3D2DF042471F5CD009C17DD /* Info.plist */,
+			);
+			path = TrackMeetTests;
+			sourceTree = "<group>";
+		};
+		D3D2DF0C2471F5CD009C17DD /* TrackMeetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2DF0D2471F5CD009C17DD /* TrackMeetUITests.swift */,
+				D3D2DF0F2471F5CD009C17DD /* Info.plist */,
+			);
+			path = TrackMeetUITests;
+			sourceTree = "<group>";
+		};
+		FEFCB3516AF6AAB6E7229F52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				279EC12432497B565C1581BF /* Pods-TrackMeet.debug.xcconfig */,
+				68CF2B60EF06A7C9022401FA /* Pods-TrackMeet.release.xcconfig */,
+				3BA08D65C9C37FA82D8D1B6A /* Pods-TrackMeet-TrackMeetUITests.debug.xcconfig */,
+				66337F9E3A9EB668E20B8429 /* Pods-TrackMeet-TrackMeetUITests.release.xcconfig */,
+				7FAD7A7C2363ADDB0EE211C6 /* Pods-TrackMeetTests.debug.xcconfig */,
+				7238FED4E7A870D22EA3A989 /* Pods-TrackMeetTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3D2DEE42471F5CB009C17DD /* TrackMeet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D2DF122471F5CD009C17DD /* Build configuration list for PBXNativeTarget "TrackMeet" */;
+			buildPhases = (
+				A7C449A5A7BFDFFF24B17189 /* [CP] Check Pods Manifest.lock */,
+				D3D2DEE12471F5CB009C17DD /* Sources */,
+				D3D2DEE22471F5CB009C17DD /* Frameworks */,
+				D3D2DEE32471F5CB009C17DD /* Resources */,
+				EF6B32A3AD89516524B91DCD /* [CP] Embed Pods Frameworks */,
+				EBF1908181A35146DC46D134 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrackMeet;
+			productName = TrackMeet;
+			productReference = D3D2DEE52471F5CB009C17DD /* TrackMeet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3D2DEFD2471F5CD009C17DD /* TrackMeetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D2DF152471F5CD009C17DD /* Build configuration list for PBXNativeTarget "TrackMeetTests" */;
+			buildPhases = (
+				DBC151D2F31D06B3D4A82F65 /* [CP] Check Pods Manifest.lock */,
+				D3D2DEFA2471F5CD009C17DD /* Sources */,
+				D3D2DEFB2471F5CD009C17DD /* Frameworks */,
+				D3D2DEFC2471F5CD009C17DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3D2DF002471F5CD009C17DD /* PBXTargetDependency */,
+			);
+			name = TrackMeetTests;
+			productName = TrackMeetTests;
+			productReference = D3D2DEFE2471F5CD009C17DD /* TrackMeetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D3D2DF082471F5CD009C17DD /* TrackMeetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D2DF182471F5CD009C17DD /* Build configuration list for PBXNativeTarget "TrackMeetUITests" */;
+			buildPhases = (
+				D90755CCF901C811576F4575 /* [CP] Check Pods Manifest.lock */,
+				D3D2DF052471F5CD009C17DD /* Sources */,
+				D3D2DF062471F5CD009C17DD /* Frameworks */,
+				D3D2DF072471F5CD009C17DD /* Resources */,
+				136A2F9FD604D7C5113AE5D2 /* [CP] Embed Pods Frameworks */,
+				B597CF7EA0CDABDDD6B2B727 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3D2DF0B2471F5CD009C17DD /* PBXTargetDependency */,
+			);
+			name = TrackMeetUITests;
+			productName = TrackMeetUITests;
+			productReference = D3D2DF092471F5CD009C17DD /* TrackMeetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3D2DEDD2471F5CB009C17DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = clc.seaver;
+				TargetAttributes = {
+					D3D2DEE42471F5CB009C17DD = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					D3D2DEFD2471F5CD009C17DD = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = D3D2DEE42471F5CB009C17DD;
+					};
+					D3D2DF082471F5CD009C17DD = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = D3D2DEE42471F5CB009C17DD;
+					};
+				};
+			};
+			buildConfigurationList = D3D2DEE02471F5CB009C17DD /* Build configuration list for PBXProject "TrackMeet" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3D2DEDC2471F5CB009C17DD;
+			productRefGroup = D3D2DEE62471F5CB009C17DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3D2DEE42471F5CB009C17DD /* TrackMeet */,
+				D3D2DEFD2471F5CD009C17DD /* TrackMeetTests */,
+				D3D2DF082471F5CD009C17DD /* TrackMeetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3D2DEE32471F5CB009C17DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D2DEF82471F5CC009C17DD /* LaunchScreen.storyboard in Resources */,
+				D37C7743251EB7070041131F /* GoogleService-Info.plist in Resources */,
+				D3D2DEF52471F5CC009C17DD /* Assets.xcassets in Resources */,
+				D3D2DEF02471F5CB009C17DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D2DEFC2471F5CD009C17DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D2DF072471F5CD009C17DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		136A2F9FD604D7C5113AE5D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7C449A5A7BFDFFF24B17189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrackMeet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B597CF7EA0CDABDDD6B2B727 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackMeet-TrackMeetUITests/Pods-TrackMeet-TrackMeetUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D90755CCF901C811576F4575 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrackMeet-TrackMeetUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBC151D2F31D06B3D4A82F65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrackMeetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBF1908181A35146DC46D134 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet/Pods-TrackMeet-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet/Pods-TrackMeet-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackMeet/Pods-TrackMeet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6B32A3AD89516524B91DCD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet/Pods-TrackMeet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMeet/Pods-TrackMeet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackMeet/Pods-TrackMeet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3D2DEE12471F5CB009C17DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DD29AB26508EC9002B51A4 /* RelayViewController.swift in Sources */,
+				D3481B4F24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift in Sources */,
+				D3366838247B08B2008EA70C /* Meet.swift in Sources */,
+				D3258ECA24BD239E00895910 /* LaunchViewController.swift in Sources */,
+				D3EF6D5C2622857D005B22FF /* CoachesVC.swift in Sources */,
+				D3DD29B0265093C8002B51A4 /* RelayTableViewCell.swift in Sources */,
+				D3D2DEED2471F5CB009C17DD /* EventEditViewController.swift in Sources */,
+				D3A0B9D2247248500088D664 /* EventsTableViewController.swift in Sources */,
+				D3A0B9D024723FDE0088D664 /* Athlete.swift in Sources */,
+				D3D2DEE92471F5CB009C17DD /* AppDelegate.swift in Sources */,
+				D3A97ADB261772EC00698FF0 /* School.swift in Sources */,
+				D3258ECC24BD304B00895910 /* SchoolsViewController.swift in Sources */,
+				D361DB0324731403005EF1A2 /* addAthleteViewController.swift in Sources */,
+				D3B15B17247818F8000BCFC8 /* AthleteResultsViewController.swift in Sources */,
+				D3D2DEF32471F5CB009C17DD /* TrackMeet.xcdatamodeld in Sources */,
+				D3A0B9D62472EEF70088D664 /* HomeViewController.swift in Sources */,
+				D3D2DEEB2471F5CB009C17DD /* SceneDelegate.swift in Sources */,
+				D36BAF84247ABEDF00D71D4A /* AddMeetViewController.swift in Sources */,
+				D3EF6D5426228310005B22FF /* CoachesViewController.swift in Sources */,
+				D361DB072475741E005EF1A2 /* AddAthleteToEventViewController.swift in Sources */,
+				D3BF359724803BB9000736F8 /* MeetsViewController.swift in Sources */,
+				D3A0B9CE24722B5B0088D664 /* TimeTableViewCell.swift in Sources */,
+				D3647CCF2476EEAB000627C6 /* ScoresViewController.swift in Sources */,
+				D361DB0524735FA9005EF1A2 /* AthletesViewController.swift in Sources */,
+				D3514F8525EC46C8005722BB /* AthleteTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D2DEFA2471F5CD009C17DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D2DF032471F5CD009C17DD /* TrackMeetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D2DF052471F5CD009C17DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D2DF0E2471F5CD009C17DD /* TrackMeetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3D2DF002471F5CD009C17DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3D2DEE42471F5CB009C17DD /* TrackMeet */;
+			targetProxy = D3D2DEFF2471F5CD009C17DD /* PBXContainerItemProxy */;
+		};
+		D3D2DF0B2471F5CD009C17DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3D2DEE42471F5CB009C17DD /* TrackMeet */;
+			targetProxy = D3D2DF0A2471F5CD009C17DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3D2DEEE2471F5CB009C17DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D2DEEF2471F5CB009C17DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D3D2DEF62471F5CC009C17DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D2DEF72471F5CC009C17DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3D2DF102471F5CD009C17DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D3D2DF112471F5CD009C17DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3D2DF132471F5CD009C17DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279EC12432497B565C1581BF /* Pods-TrackMeet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TrackMeet/TrackMeetDebug.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S22H3YR676;
+				INFOPLIST_FILE = TrackMeet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.9.31;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.TrackMeet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3D2DF142471F5CD009C17DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68CF2B60EF06A7C9022401FA /* Pods-TrackMeet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TrackMeet/TrackMeetRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S22H3YR676;
+				INFOPLIST_FILE = TrackMeet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.9.31;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.TrackMeet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D3D2DF162471F5CD009C17DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FAD7A7C2363ADDB0EE211C6 /* Pods-TrackMeetTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S22H3YR676;
+				INFOPLIST_FILE = TrackMeetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = clc.TrackMeetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackMeet.app/TrackMeet";
+			};
+			name = Debug;
+		};
+		D3D2DF172471F5CD009C17DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7238FED4E7A870D22EA3A989 /* Pods-TrackMeetTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S22H3YR676;
+				INFOPLIST_FILE = TrackMeetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = clc.TrackMeetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrackMeet.app/TrackMeet";
+			};
+			name = Release;
+		};
+		D3D2DF192471F5CD009C17DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BA08D65C9C37FA82D8D1B6A /* Pods-TrackMeet-TrackMeetUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S22H3YR676;
+				INFOPLIST_FILE = TrackMeetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = clc.TrackMeetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TrackMeet;
+			};
+			name = Debug;
+		};
+		D3D2DF1A2471F5CD009C17DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66337F9E3A9EB668E20B8429 /* Pods-TrackMeet-TrackMeetUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S22H3YR676;
+				INFOPLIST_FILE = TrackMeetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = clc.TrackMeetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TrackMeet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3D2DEE02471F5CB009C17DD /* Build configuration list for PBXProject "TrackMeet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D2DF102471F5CD009C17DD /* Debug */,
+				D3D2DF112471F5CD009C17DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D2DF122471F5CD009C17DD /* Build configuration list for PBXNativeTarget "TrackMeet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D2DF132471F5CD009C17DD /* Debug */,
+				D3D2DF142471F5CD009C17DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D2DF152471F5CD009C17DD /* Build configuration list for PBXNativeTarget "TrackMeetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D2DF162471F5CD009C17DD /* Debug */,
+				D3D2DF172471F5CD009C17DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D2DF182471F5CD009C17DD /* Build configuration list for PBXNativeTarget "TrackMeetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D2DF192471F5CD009C17DD /* Debug */,
+				D3D2DF1A2471F5CD009C17DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D3D2DEF12471F5CB009C17DD /* TrackMeet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3D2DEF22471F5CB009C17DD /* TrackMeet.xcdatamodel */,
+			);
+			currentVersion = D3D2DEF22471F5CB009C17DD /* TrackMeet.xcdatamodel */;
+			path = TrackMeet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D3D2DEDD2471F5CB009C17DD /* Project object */;
+}

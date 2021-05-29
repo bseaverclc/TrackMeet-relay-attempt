@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>277683121299-ppqm8tlvngt5ddn2g3ka402bvpnaodoe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.277683121299-ppqm8tlvngt5ddn2g3ka402bvpnaodoe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC9FIBNtdV5w0Nz-rO_lkwlxB1krj7vFEk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>277683121299</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>clc.TrackMeet</string>
+	<key>PROJECT_ID</key>
+	<string>trackmeet2-d0c6a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trackmeet2-d0c6a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:277683121299:ios:5a3f4e8fd128b6c90bf166</string>
+	<key>DATABASE_URL</key>
+	<string>https://trackmeet2-d0c6a.firebaseio.com</string>
+</dict>
+</plist>
