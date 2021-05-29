@@ -87,6 +87,7 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("did select row at")
         if Meet.canCoach{
         if tableView == AthleteTableView{
             if runners.count < 4{
@@ -112,6 +113,7 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if tableView == relayTableView && Meet.canCoach{ return true}
         else{ return false}
+       
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -143,7 +145,9 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBAction func timeAction(_ sender: UITextField) {
+        print("Time action happening")
         if Meet.canCoach{
+            
             
             guard let cell2 = sender.findParentTableViewCell (),
                 let indexPath2 = relayTableView.indexPath(for: cell2) else {

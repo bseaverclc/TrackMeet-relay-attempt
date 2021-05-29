@@ -33,6 +33,7 @@ public class RelayTableViewCell : UITableViewCell{
         nameOutlet.text = "Empty"
         timeOutlet.text = ""
         timeOutlet.placeholder = "Split"
+        timeOutlet.isEnabled = false
         
     }
 }
