@@ -87,6 +87,7 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if Meet.canCoach{
         if tableView == AthleteTableView{
             if runners.count < 4{
             runners.append(schoolAthletes[indexPath.row])
@@ -103,6 +104,7 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             relayTableView.reloadData()
             //tableView.reloadData()
             print("Added relay athlete")
+        }
         }
         }
     }
