@@ -14,6 +14,7 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
    
     @IBOutlet weak var AthleteTableView: UITableView!
     @IBOutlet weak var relayTableView: UITableView!
+    
     var runners = [Athlete]()
     var schoolAthletes = [Athlete]()
     var theSchool : String!
@@ -27,6 +28,7 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "\(screenTitle) \(theRelay.last),\(theRelay.first) splits"
         
         let start = screenTitle.index(screenTitle.startIndex, offsetBy: 2)
@@ -53,6 +55,15 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else{
             return schoolAthletes.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if tableView == relayTableView{
+            return "Relay Members"
+        }
+        else{
+            return "Roster"
         }
     }
     
