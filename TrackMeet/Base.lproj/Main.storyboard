@@ -1736,14 +1736,64 @@
                             <constraint firstItem="U4F-ro-T0c" firstAttribute="top" secondItem="slY-in-1dc" secondAttribute="top" id="z9n-oL-zmv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pmC-3Z-0MC"/>
+                    <navigationItem key="navigationItem" id="pmC-3Z-0MC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Pj-wK-srD">
+                            <connections>
+                                <action selector="addAction:" destination="IXV-UC-9YT" id="Icr-cX-Bwz"/>
+                                <segue destination="Bge-yb-sls" kind="show" identifier="addEventToAthleteSegue" id="qhu-VJ-G5u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addButtonOutlet" destination="3Pj-wK-srD" id="meu-Cj-Wzb"/>
                         <outlet property="tableView" destination="U4F-ro-T0c" id="aeF-nr-pla"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOR-Dd-BSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-140" y="1510.6635071090047"/>
+        </scene>
+        <!--Add Event To Athlete View Controller-->
+        <scene sceneID="k9G-4s-FbD">
+            <objects>
+                <tableViewController id="Bge-yb-sls" customClass="AddEventToAthleteViewController" customModule="TrackMeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s25-NN-7tK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="myCell" textLabel="BKS-bW-x0Z" style="IBUITableViewCellStyleDefault" id="t2S-Wx-kVk">
+                                <rect key="frame" x="0.0" y="28" width="390" height="67.666664123535156"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t2S-Wx-kVk" id="IXY-vK-Miw">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="67.666664123535156"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="BKS-bW-x0Z">
+                                            <rect key="frame" x="20" y="0.0" width="350" height="67.666664123535156"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bge-yb-sls" id="lVy-s1-s41"/>
+                            <outlet property="delegate" destination="Bge-yb-sls" id="TS4-xr-jed"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="upN-db-59Q"/>
+                    <connections>
+                        <segue destination="6r9-cj-Z8o" kind="unwind" identifier="unwindToAthlete" unwindAction="unwindFromAddEventToAthlete:" id="hIc-xv-Wra"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpU-6s-urA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="6r9-cj-Z8o" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="2254"/>
         </scene>
         <!--Meets View Controller-->
         <scene sceneID="k3c-yx-ajg">

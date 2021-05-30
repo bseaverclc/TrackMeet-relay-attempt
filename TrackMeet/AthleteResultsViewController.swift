@@ -15,6 +15,7 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
     var meet : Meet?
     var canEdit = false
     
+    @IBOutlet weak var addButtonOutlet: UIBarButtonItem!
     @IBOutlet weak var eventLabel: UILabel!
     
     @IBOutlet weak var markLabel: UILabel!
@@ -31,14 +32,14 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        thisMeetEvents = [Event]()
+        //thisMeetEvents = [Event]()
         if let m = meet{
-            for e in athlete.events{
-                if e.meetName == m.name{
-                    thisMeetEvents.append(e)
-                }
-            }
-            print(thisMeetEvents.count)
+//            for e in athlete.events{
+//                if e.meetName == m.name{
+//                    thisMeetEvents.append(e)
+//                }
+//            }
+//            print(thisMeetEvents.count)
             return thisMeetEvents.count
         }
         else{
@@ -104,7 +105,9 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
                         athlete.deleteEventFromFirebase(euid: euid)
                         thisMeetEvents.remove(at: indexPath.row)
                         tableView.deleteRows(at: [indexPath], with: .fade)
-                        tableView.reloadData()
+                        
+                        //tableView.reloadData()
+                        
                         
                 }
                 }
@@ -121,6 +124,17 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
         checkCanEdit()
         print("Can edit athlete \(canEdit)")
         
+        if let m = meet{
+            addButtonOutlet.isEnabled = true
+            for e in athlete.events{
+                if e.meetName == m.name{
+                    thisMeetEvents.append(e)
+                }
+            }
+        }
+        else{
+            addButtonOutlet.isEnabled = false
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -147,4 +161,24 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
 
+    @IBAction func addAction(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nvc = segue.destination as! AddEventToAthleteViewController
+        nvc.meet = meet
+        nvc.athlete = athlete
+        nvc.thisMeetEvents = thisMeetEvents
+    }
+    
+    @IBAction func unwindFromAddEventToAthlete( _ seg: UIStoryboardSegue) {
+       let pvc = seg.source as! AddEventToAthleteViewController
+       //athletes = pvc.allAthletes
+       //meet = pvc.meet
+        thisMeetEvents = pvc.thisMeetEvents
+        print("\(thisMeetEvents.count)")
+       tableView.reloadData()
+       //"Unwind to events table"
+   }
 }

@@ -31,17 +31,18 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
     var schools = [School]()
     var meet : Meet?
     var pvcScreenTitle = ""
+    var selectedTab = 0
    // var meets : [Meet]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let ref = Database.database().reference().child("athletes")
-         ref.observe(.childChanged, with: { (snapshot) in
-            print(snapshot)
-            AppData.allAthletes.sort(by: {$0.last.localizedCaseInsensitiveCompare($1.last) == .orderedAscending})
-            
-     })
+//         ref.observe(.childChanged, with: { (snapshot) in
+//            print(snapshot)
+//            AppData.allAthletes.sort(by: {$0.last.localizedCaseInsensitiveCompare($1.last) == .orderedAscending})
+//            
+//     })
          
         
         
@@ -52,7 +53,7 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
            
         
         self.title = screenTitle
-        displayedAthletes = AppData.allAthletes
+       // displayedAthletes = AppData.allAthletes
        
         
         
@@ -96,6 +97,7 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         print("viewDidAppear")
+        tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![selectedTab])
         tableView.reloadData()
         
     }
@@ -408,6 +410,13 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        //keeping track of what tab was selected
+        for i in 0..<tabBar.items!.count{
+            if tabBar.items![i] == item{
+                selectedTab = i
+                break
+            }
+        }
         displayedAthletes = [Athlete]()
         for a in AppData.allAthletes{
 

@@ -524,7 +524,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
             //print(uid)
            
             guard let dict = snapshot.value as? [String:Any]
-            else{ print("Error")
+            else{ print("Error in observe child Changed")
                 return
             }
             
@@ -534,7 +534,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
            // Data.allAthletes.append(a)
            // ref.child("athletes").child(uid).child("events").
             ref.child("athletes").child(uid).child("events").observe(.childRemoved, with: { (snapshot2) in
-                print("event removed")
+                print("observe event removed from launchvc")
             })
             
             

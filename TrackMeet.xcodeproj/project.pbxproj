@@ -19,6 +19,7 @@
 		D361DB072475741E005EF1A2 /* AddAthleteToEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361DB062475741E005EF1A2 /* AddAthleteToEventViewController.swift */; };
 		D3647CCF2476EEAB000627C6 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3647CCE2476EEAB000627C6 /* ScoresViewController.swift */; };
 		D36BAF84247ABEDF00D71D4A /* AddMeetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BAF83247ABEDF00D71D4A /* AddMeetViewController.swift */; };
+		D374F7DB26632BDE00FDEB4A /* AddEventToAthleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374F7DA26632BDE00FDEB4A /* AddEventToAthleteViewController.swift */; };
 		D37C7743251EB7070041131F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37C7742251EB7070041131F /* GoogleService-Info.plist */; };
 		D3A0B9CE24722B5B0088D664 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0B9CD24722B5B0088D664 /* TimeTableViewCell.swift */; };
 		D3A0B9D024723FDE0088D664 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0B9CF24723FDE0088D664 /* Athlete.swift */; };
@@ -79,6 +80,7 @@
 		D3647CCE2476EEAB000627C6 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		D36BAF83247ABEDF00D71D4A /* AddMeetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeetViewController.swift; sourceTree = "<group>"; };
 		D36DD1DD263EC9C300829EDF /* TrackMeetDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrackMeetDebug.entitlements; sourceTree = "<group>"; };
+		D374F7DA26632BDE00FDEB4A /* AddEventToAthleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventToAthleteViewController.swift; sourceTree = "<group>"; };
 		D37C7742251EB7070041131F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3A0B9CD24722B5B0088D664 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		D3A0B9CF24723FDE0088D664 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				D3647CCE2476EEAB000627C6 /* ScoresViewController.swift */,
 				D3B15B16247818F8000BCFC8 /* AthleteResultsViewController.swift */,
 				D3481B4E24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift */,
+				D374F7DA26632BDE00FDEB4A /* AddEventToAthleteViewController.swift */,
 				D3366837247B08B2008EA70C /* Meet.swift */,
 				D3A0B9CF24723FDE0088D664 /* Athlete.swift */,
 				D361DB0424735FA9005EF1A2 /* AthletesViewController.swift */,
@@ -539,6 +542,7 @@
 				D361DB072475741E005EF1A2 /* AddAthleteToEventViewController.swift in Sources */,
 				D3BF359724803BB9000736F8 /* MeetsViewController.swift in Sources */,
 				D3A0B9CE24722B5B0088D664 /* TimeTableViewCell.swift in Sources */,
+				D374F7DB26632BDE00FDEB4A /* AddEventToAthleteViewController.swift in Sources */,
 				D3647CCF2476EEAB000627C6 /* ScoresViewController.swift in Sources */,
 				D361DB0524735FA9005EF1A2 /* AthletesViewController.swift in Sources */,
 				D3514F8525EC46C8005722BB /* AthleteTableViewCell.swift in Sources */,
