@@ -49,6 +49,10 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
+        print("tapping")
+        view.endEditing(true)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == relayTableView{
             return 4

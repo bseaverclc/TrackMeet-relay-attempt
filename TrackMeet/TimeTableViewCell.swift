@@ -23,6 +23,7 @@ public class TimeTableViewCell : UITableViewCell{
     
     
     func configure(text: String, placeholder : String, placeText : String){
+        timeOutlet.layer.zPosition = 2
         if Meet.canManage{
             timeOutlet.isEnabled = true
             placeOutlet.isEnabled = true
@@ -39,6 +40,7 @@ public class TimeTableViewCell : UITableViewCell{
     }
     
     func configure(text: String, placeholder : String, placeText : String, pointsText : String){
+        timeOutlet.layer.zPosition = 2
         if Meet.canManage{
             timeOutlet.isEnabled = true
             placeOutlet.isEnabled = true
@@ -55,6 +57,7 @@ public class TimeTableViewCell : UITableViewCell{
        }
     
     func configure(text: String, placeholder : String){
+        timeOutlet.layer.zPosition = 2
         if Meet.canManage{
             timeOutlet.isEnabled = true
             placeOutlet.isEnabled = true

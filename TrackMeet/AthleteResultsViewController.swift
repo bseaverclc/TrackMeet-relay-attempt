@@ -120,21 +120,22 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addButtonOutlet.isEnabled = false
         self.title = "\(athlete.first) \(athlete.last)"
         checkCanEdit()
         print("Can edit athlete \(canEdit)")
         
         if let m = meet{
+            if Meet.canCoach{
             addButtonOutlet.isEnabled = true
+            }
             for e in athlete.events{
                 if e.meetName == m.name{
                     thisMeetEvents.append(e)
                 }
             }
         }
-        else{
-            addButtonOutlet.isEnabled = false
-        }
+        
 
         // Do any additional setup after loading the view.
     }
