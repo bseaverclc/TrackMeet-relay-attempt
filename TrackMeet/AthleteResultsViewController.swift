@@ -98,6 +98,13 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete{
+                if thisMeetEvents[indexPath.row].name.contains("split") || thisMeetEvents[indexPath.row].name.contains("4x"){
+                    let alert = UIAlertController(title: "Error", message: "You can only delete splits and relays from Events", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                   
+                    present(alert, animated: true, completion: nil)
+                    return
+                }
                 let cell = tableView.cellForRow(at: indexPath) as! AthleteResultsTableViewCell
                 if cell.markOutlet.text == ""{
                     if let euid = thisMeetEvents[indexPath.row].uid{
@@ -126,9 +133,10 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
         print("Can edit athlete \(canEdit)")
         
         if let m = meet{
-            if Meet.canCoach{
-            addButtonOutlet.isEnabled = true
-            }
+//            if Meet.canCoach{
+//            addButtonOutlet.isEnabled = true
+//            }
+            if canEdit{addButtonOutlet.isEnabled = true}
             for e in athlete.events{
                 if e.meetName == m.name{
                     thisMeetEvents.append(e)
@@ -143,7 +151,9 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
 
     func checkCanEdit(){
         if let m = meet{
-            if let user = Auth.auth().currentUser{
+            if Meet.canManage{canEdit = true}
+        
+           else if let user = Auth.auth().currentUser{
             let sf = athlete.schoolFull
             for s in AppData.schoolsNew{
                 if s.full == sf{
@@ -152,6 +162,7 @@ class AthleteResultsViewController: UIViewController, UITableViewDataSource, UIT
                         if user.email == coach{
                             print("can edit")
                             canEdit = true
+                            addButtonOutlet.isEnabled = true
                         }
                     }
                 }

@@ -14,17 +14,17 @@ public class RelayTableViewCell : UITableViewCell{
     @IBOutlet weak var timeOutlet: UITextField!
     
     
-    func configure(ath: Athlete, ev : Event){
+    func configure(ath: Athlete, ev : Event, editable: Bool){
         
         nameOutlet.text = "\(ath.last), \(ath.first)"
         timeOutlet.placeholder = "Split"
         timeOutlet.text = ev.markString
         
         if Meet.canCoach{
-            timeOutlet.isEnabled = true
+            timeOutlet.isEnabled = editable
         }
         else{
-            timeOutlet.isEnabled = false
+            timeOutlet.isEnabled = editable
         }
         
     }

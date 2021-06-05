@@ -244,6 +244,32 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
            return cell
        }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        if Meet.canManage{return true}
+        if sections{
+            switch indexPath.section{
+            case 0:
+                if heat1[indexPath.row].schoolFull != AppData.mySchool{
+                    return false
+                }
+            case 1:
+                if heat2[indexPath.row].schoolFull != AppData.mySchool{
+                    return false
+                }
+            default:
+                if eventAthletes[indexPath.row].schoolFull != AppData.mySchool{
+                    return false
+                }
+            }
+        }
+        else{
+            if eventAthletes[indexPath.row].schoolFull != AppData.mySchool{
+                return false
+            }
+        }
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if Meet.canCoach{
         meet.beenScored[selectedRow] = false
@@ -305,6 +331,9 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         if(screenTitle.contains("4x")){
+//            if !Meet.canManage && eventAthletes[indexPath.row].schoolFull != AppData.mySchool{
+//                return
+//            }
             selectedSchool = eventAthletes[indexPath.row].schoolFull
             selectedRelay = eventAthletes[indexPath.row]
             for e in selectedRelay.events{
@@ -317,12 +346,15 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//Coaches can edit all athletes
         if Meet.canCoach{
             return true
         }
         else{
             return false
         }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -340,7 +372,11 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
             
             switch sec{
             case 0:
-                var canDelete = true
+                var canDelete = AppData.mySchool == heat1[indexPath.row].schoolFull
+                if Meet.canManage{
+                    canDelete = true;
+                }
+                
                 for e in heat1[indexPath.row].events{
                     if e.name == self.title && e.meetName == self.meet.name{
                         if e.markString != "" || e.place != nil{
@@ -357,6 +393,7 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                     if e.name == self.title && e.meetName == self.meet.name {
                         if let euid = e.uid{
                             print("calling deleteEventFromFirebase")
+                            
                         heat1[indexPath.row].deleteEventFromFirebase(euid: euid)
                        
                         }
@@ -370,7 +407,10 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                 }
                 
             case 1:
-                var canDelete = true
+                var canDelete = AppData.mySchool == heat2[indexPath.row].schoolFull
+                if Meet.canManage{
+                    canDelete = true;
+                }
                 for e in heat2[indexPath.row].events{
                     if e.name == self.title && e.meetName == self.meet.name{
                         if e.markString != "" || e.place != nil{
@@ -399,7 +439,10 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                 }
                 
             default:
-                var canDelete = true
+                var canDelete = AppData.mySchool == eventAthletes[indexPath.row].schoolFull
+                if Meet.canManage{
+                    canDelete = true;
+                }
                 for e in eventAthletes[indexPath.row].events{
                     if e.name == self.title && e.meetName == self.meet.name{
                         if e.markString != "" || e.place != nil{
@@ -429,7 +472,10 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
             }
             }
             else{
-                var canDelete = true
+                var canDelete = AppData.mySchool == eventAthletes[indexPath.row].schoolFull
+                if Meet.canManage{
+                    canDelete = true;
+                }
                 for e in eventAthletes[indexPath.row].events{
                     if e.name == self.title && e.meetName == self.meet.name{
                         if e.markString != "" || e.place != nil{
@@ -446,6 +492,7 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                     if e.name == self.title && e.meetName == self.meet.name {
                         if let euid = e.uid{
                             print("calling deleteEventFromFirebase")
+                            deleteRelayMembers(ev: e)
                         eventAthletes[indexPath.row].deleteEventFromFirebase(euid: euid)
                        
                         }
@@ -463,6 +510,33 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
     }
     }
   
+    func deleteRelayMembers(ev: Event){
+        if let members = ev.relayMembers{
+            let start = ev.name.index(ev.name.startIndex, offsetBy: 2)
+            let end = ev.name.index(ev.name.startIndex, offsetBy:   4)
+            let range = start...end
+            let titleSplit = "\(ev.name[range]) split \(ev.level)"
+            
+            for id in members{
+                for ath in AppData.allAthletes{
+                    if ath.uid == id{
+                        for e in ath.events{
+                            if e.meetName == meet.name && e.name == titleSplit{
+                                if let euid = e.uid{
+                                ath.deleteEventFromFirebase(euid: euid)
+                                print("deleted relay member ")
+                                }
+                            }
+                        }
+                        break
+                    }
+                }
+            
+            }
+        
+       }
+    }
+    
     // Actions
     @IBAction func timeAction(_ sender: UITextField) {
          //print(sender.tag)

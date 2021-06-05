@@ -22,6 +22,7 @@ class AppData{
     static var coach = ""
     static var manager = ""
     static var schoolsNew = [School]()
+    static var mySchool = ""
 }
 
 
@@ -61,6 +62,17 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
      
+        if let user = Auth.auth().currentUser{
+            AppData.userID = user.uid
+            for school in AppData.schoolsNew{
+                for coach in school.coaches{
+                    if coach == user.email!{
+                        AppData.mySchool = school.full
+                        print("my school is \(AppData.mySchool)")
+                    }
+                }
+            }
+        }
         //storeToUserDefaults()
     }
     
@@ -69,10 +81,18 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
 
     
     @objc func didSignIn(){
-        
+        print("didSignIn being called")
         //if let blah = GID
         if let user = Auth.auth().currentUser{
             AppData.userID = user.uid
+            for school in AppData.schoolsNew{
+                for coach in school.coaches{
+                    if coach == user.email!{
+                        AppData.mySchool = school.full
+                        print("my school is \(AppData.mySchool)")
+                    }
+                }
+            }
            
             nameOutlet.text = "\(user.email!)"
             logInOutlet.isHidden = true
@@ -122,6 +142,17 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
         beenScoredChangedInFirebase()
         updateMeetFromFirebase()
      
+        if let user = Auth.auth().currentUser{
+            AppData.userID = user.uid
+            for school in AppData.schoolsNew{
+                for coach in school.coaches{
+                    if coach == user.email!{
+                        AppData.mySchool = school.full
+                        print("my school is \(AppData.mySchool)")
+                    }
+                }
+            }
+        }
       
     
         
@@ -300,6 +331,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
         logInOutlet.isHidden = false
         logOutOutlet.isHidden = true
         authorizationButton.isHidden = false
+        AppData.mySchool = ""
        }
     }
     

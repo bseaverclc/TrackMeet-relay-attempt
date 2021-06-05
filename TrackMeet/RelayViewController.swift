@@ -15,6 +15,8 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var AthleteTableView: UITableView!
     @IBOutlet weak var relayTableView: UITableView!
     
+    
+    
     var runners = [Athlete]()
     var schoolAthletes = [Athlete]()
     var theSchool : String!
@@ -46,7 +48,12 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 schoolAthletes.append(a)
             }
         }
+      
         // Do any additional setup after loading the view.
+    }
+    
+    func canEdit()->Bool{
+        return Meet.canManage || theRelay.schoolFull == AppData.mySchool
     }
     
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
@@ -79,11 +86,13 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if indexPath.row < runners.count{
             for event in runners[indexPath.row].events{
                   
-                if event.name == titleSplit && event.meetName == meet.name{
-                    cell.configure(ath: runners[indexPath.row], ev: event)
+                if event.name == titleSplit && event.meetName == meet.name {
+                    cell.configure(ath: runners[indexPath.row], ev: event, editable: canEdit())
                     //cell.timeOutlet.tag = indexPath.row
                     break;
                 }
+                
+                
             }
             }
             
@@ -104,7 +113,11 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("did select row at")
         if Meet.canCoach{
+                       
         if tableView == AthleteTableView{
+            if !Meet.canManage && theRelay.schoolFull != AppData.mySchool{
+                           return
+            }
             if runners.count < 4{
             runners.append(schoolAthletes[indexPath.row])
             
@@ -126,14 +139,15 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if tableView == relayTableView && Meet.canCoach{ return true}
+        if (tableView == relayTableView && (Meet.canManage || theRelay.schoolFull == AppData.mySchool)){ return true}
         else{ return false}
+    
        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if tableView == relayTableView{
-            if editingStyle == .delete{
+            if editingStyle == .delete && indexPath.row < runners.count{
                 theEvent.relayMembers?.remove(at: indexPath.row)
                 theRelay.updateFirebase()
                 
@@ -181,6 +195,7 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
                              }
                  }
         }
+        
             }
             
         }

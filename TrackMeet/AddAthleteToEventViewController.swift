@@ -22,19 +22,36 @@ class AddAthleteToEventViewController: UIViewController, UITableViewDelegate, UI
         var displayedAthletes = [Athlete]()
     var meet : Meet!
     var schools = [String]()
+    var userEmail = ""
         
     
         override func viewDidLoad() {
             super.viewDidLoad()
             self.title = screenTitle
             lev = String(screenTitle.suffix(3))
+            print("AppData.userID = \(AppData.userID)")
+            
+            if let user = Auth.auth().currentUser{
+                userEmail = user.email!
+            }
+            
+            
             for a in AppData.allAthletes{
-                if meet.schools.keys.contains(a.schoolFull){
+                if meet.schools.keys.contains(a.schoolFull) && AppData.mySchool == a.schoolFull{
+//                    for school in AppData.schoolsNew{
+//                        if school.full == a.schoolFull{
+//                            for c in school.coaches{
+//                                print("checking coaches \(c)")
+//                                if c == userEmail{
+//                                    displayedAthletes.append(a)
+//                                }
+//                            }
+//                        }                    }
                     displayedAthletes.append(a)
                 }
             }
           
-             schools = [String](meet.schools.values)
+            schools = [String](meet.schools.values)
             let tabItems = tabBarOutlet.items!
                  var i = 0
                  for school in schools{
@@ -85,7 +102,15 @@ class AddAthleteToEventViewController: UIViewController, UITableViewDelegate, UI
          func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             print("Did select row at")
             let selectedAthlete = displayedAthletes[indexPath.row]
-            if eventAthletes.contains(where: { $0.equals(other: selectedAthlete)}) || heat1.contains(where: { $0.equals(other: selectedAthlete)}) || heat2.contains(where: { $0.equals(other: selectedAthlete)}) {
+            if !Meet.canManage && selectedAthlete.schoolFull != AppData.mySchool{
+                let alert = UIAlertController(title: "Error!", message: "You are not a coach of this school", preferredStyle: .alert)
+                let action = UIAlertAction(title: "ok", style: .cancel) { (action) in
+                    self.tableView.deselectRow(at: indexPath, animated: true)
+                }
+                alert.addAction(action)
+               present(alert, animated: true, completion: nil)
+            }
+            else if eventAthletes.contains(where: { $0.equals(other: selectedAthlete)}) || heat1.contains(where: { $0.equals(other: selectedAthlete)}) || heat2.contains(where: { $0.equals(other: selectedAthlete)}) {
                 let alert = UIAlertController(title: "Error!", message: "Athlete already in event", preferredStyle: .alert)
                 let action = UIAlertAction(title: "ok", style: .cancel) { (action) in
                     self.tableView.deselectRow(at: indexPath, animated: true)
