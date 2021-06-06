@@ -23,6 +23,7 @@ class AppData{
     static var manager = ""
     static var schoolsNew = [School]()
     static var mySchool = ""
+    static var fullAccess = false
 }
 
 
@@ -68,10 +69,14 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
                 for coach in school.coaches{
                     if coach == user.email!{
                         AppData.mySchool = school.full
+                        AppData.coach = coach
                         print("my school is \(AppData.mySchool)")
                     }
                 }
             }
+        }
+        if(AppData.userID == "SRrCKcYVC8U6aZTMv0XCYHHR4BG3"){
+            AppData.fullAccess = true
         }
         //storeToUserDefaults()
     }
@@ -89,6 +94,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
                 for coach in school.coaches{
                     if coach == user.email!{
                         AppData.mySchool = school.full
+                        AppData.coach = coach
                         print("my school is \(AppData.mySchool)")
                     }
                 }
@@ -148,6 +154,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
                 for coach in school.coaches{
                     if coach == user.email!{
                         AppData.mySchool = school.full
+                        AppData.coach = coach
                         print("my school is \(AppData.mySchool)")
                     }
                 }
@@ -332,6 +339,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
         logOutOutlet.isHidden = true
         authorizationButton.isHidden = false
         AppData.mySchool = ""
+        AppData.coach = ""
        }
     }
     

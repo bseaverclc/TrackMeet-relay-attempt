@@ -246,7 +246,43 @@ class MeetsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
         }
         let coach = UIAlertAction(title: "Coach", style: .default) { (alert) in
-            self.present(coachAlert, animated: true, completion: nil)
+            if !Meet.canCoach{
+            if let sm = self.selectedMeet{
+            for (key,value) in sm.schools{
+                for school in AppData.schoolsNew{
+                    if school.full == key{
+                        for coach in school.coaches{
+                            if coach == AppData.coach{
+                                Meet.canCoach = true
+                                AppData.mySchool = school.full
+                                let successAlert = UIAlertController(title: "Success!", message: "You are logged in to edit entries for \(AppData.mySchool)", preferredStyle: .alert)
+                                successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                                    self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                                }))
+                                
+                                self.present(successAlert, animated: true, completion: nil)
+                                
+                                break;
+                            }
+                        }
+                    }
+                    if Meet.canCoach{break}
+                }
+                if Meet.canCoach{break}
+            }
+            }
+            }
+            if !Meet.canCoach{
+                let failedAlert = UIAlertController(title: "Error", message: "You are not logged in to edit entries for teams in this meet. Make sure your head coach has added your email as a coach", preferredStyle: .alert)
+                failedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(failedAlert, animated: true, completion: nil)
+                
+                
+               // self.present(coachAlert, animated: true, completion: nil)
+                
+            }
+            
         }
         let manager = UIAlertAction(title: "Meet Manager", style: .default) { (alert) in
             self.present(manageAlert, animated: true, completion: nil)
@@ -259,6 +295,20 @@ class MeetsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         {
             Meet.canCoach = true
             Meet.canManage = true
+            if let sm = self.selectedMeet{
+            for (key,value) in sm.schools{
+                for school in AppData.schoolsNew{
+                    if school.full == key{
+                        for coach in school.coaches{
+                            if coach == AppData.coach{
+                                Meet.canCoach = true
+                                AppData.mySchool = school.full
+                            }
+                        }
+                    }
+                }
+            }
+            }
             self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
         }
         else{

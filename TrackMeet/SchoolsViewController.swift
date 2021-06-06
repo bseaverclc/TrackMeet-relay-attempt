@@ -99,7 +99,7 @@ class SchoolsViewController: UIViewController,UITableViewDelegate, UITableViewDa
             //var blankText = false
             var blankAlert = UIAlertController()
             let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-                
+                self.canEditSchools = AppData.fullAccess
                 let theSchool = AppData.schoolsNew[indexPath.row]
                 for e in theSchool.coaches{
                     if Auth.auth().currentUser?.email == e{
