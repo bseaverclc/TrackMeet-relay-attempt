@@ -23,11 +23,16 @@ class AddAthleteToEventViewController: UIViewController, UITableViewDelegate, UI
     var meet : Meet!
     var schools = [String]()
     var userEmail = ""
+    var relayEvent = false
         
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            
             self.title = screenTitle
+            if screenTitle.contains("4x"){
+                relayEvent = true
+            }
             lev = String(screenTitle.suffix(3))
             print("AppData.userID = \(AppData.userID)")
             
@@ -47,7 +52,17 @@ class AddAthleteToEventViewController: UIViewController, UITableViewDelegate, UI
 //                                }
 //                            }
 //                        }                    }
-                    displayedAthletes.append(a)
+                    if relayEvent{
+                        if a.last == a.school{
+                            displayedAthletes.append(a)
+                        }
+                    }
+                    else{
+                        if a.last != a.school{
+                            displayedAthletes.append(a)
+                        }
+                    }
+                    
                 }
             }
           
@@ -266,7 +281,17 @@ class AddAthleteToEventViewController: UIViewController, UITableViewDelegate, UI
             
                 if item.title == a.school{
                     if a.schoolFull.suffix(3) == "(\(meet.gender))"{
-                    displayedAthletes.append(a)
+                        if relayEvent{
+                            if a.last == a.school{
+                                displayedAthletes.append(a)
+                            }
+                        }
+                        else{
+                            if a.last != a.school{
+                                displayedAthletes.append(a)
+                            }
+                        }
+                    
                     }
                 }
             }

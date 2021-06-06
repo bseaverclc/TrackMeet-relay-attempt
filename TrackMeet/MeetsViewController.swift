@@ -293,6 +293,7 @@ class MeetsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         chooseAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         if(selectedMeet!.userId == AppData.userID  || AppData.userID == "SRrCKcYVC8U6aZTMv0XCYHHR4BG3")
         {
+            print("Automatic Access")
             Meet.canCoach = true
             Meet.canManage = true
             if let sm = self.selectedMeet{
@@ -303,6 +304,7 @@ class MeetsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             if coach == AppData.coach{
                                 Meet.canCoach = true
                                 AppData.mySchool = school.full
+                                print(AppData.mySchool)
                             }
                         }
                     }

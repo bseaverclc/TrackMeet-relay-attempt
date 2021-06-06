@@ -86,6 +86,7 @@ class CoachesVC: UITableViewController {
             // Delete the row from the data source
             if school.coaches.count > 1{
             school.coaches.remove(at: indexPath.row)
+            self.school.updateFirebase()
             tableView.deleteRows(at: [indexPath], with: .fade)
             }
             else{
