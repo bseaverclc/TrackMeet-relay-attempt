@@ -66,11 +66,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vVe-fd-cao">
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vVe-fd-cao">
                                 <rect key="frame" x="0.0" y="670" width="390" height="120"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZD-gj-8rK">
+                                        <rect key="frame" x="94.666666666666686" y="0.0" width="201" height="33.333333333333336"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Log in with email"/>
+                                        <connections>
+                                            <action selector="emailAction:" destination="iXb-bg-nrS" eventType="touchUpInside" id="gHf-QU-2iL"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs7-wk-5XH" customClass="GIDSignInButton">
-                                        <rect key="frame" x="97.666666666666686" y="0.0" width="195" height="46"/>
+                                        <rect key="frame" x="97.666666666666686" y="43.333333333333371" width="195" height="33.333333333333343"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
@@ -78,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM7-aR-lSv">
-                                        <rect key="frame" x="169" y="90" width="52" height="30"/>
+                                        <rect key="frame" x="169" y="86.666666666666629" width="52" height="33.333333333333343"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <state key="normal" title="Log out">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,6 +121,7 @@
                     <navigationItem key="navigationItem" id="Jdb-IJ-dUh"/>
                     <connections>
                         <outlet property="QuickMeetLabel" destination="fw7-8E-3hK" id="wza-kj-mcL"/>
+                        <outlet property="emailButtonOutlet" destination="GZD-gj-8rK" id="Zrd-Pw-vmZ"/>
                         <outlet property="logInOutlet" destination="xs7-wk-5XH" id="tmk-mt-ZhO"/>
                         <outlet property="logOutOutlet" destination="xM7-aR-lSv" id="ZPu-2a-wnR"/>
                         <outlet property="loginStackView" destination="vVe-fd-cao" id="Ab4-GI-S9U"/>
@@ -548,29 +557,69 @@
                                 <rect key="frame" x="0.0" y="120.33333333333331" width="390" height="591.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="Ahs-lB-kkI" detailTextLabel="GXT-DK-QXF" style="IBUITableViewCellStyleValue1" id="IwU-a1-1Xj">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="49.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="IwU-a1-1Xj" customClass="AthletesWithEventsCell" customModule="TrackMeet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IwU-a1-1Xj" id="5DL-Wa-Jec">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="49.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="Ahs-lB-kkI">
-                                                    <rect key="frame" x="19.999999999999996" y="13" width="37.666666666666664" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last, First" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tD-4B-Teg">
+                                                    <rect key="frame" x="20" y="8.6666666666666661" width="195" height="26.333333333333336"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="GXT-DK-QXF">
-                                                    <rect key="frame" x="319.66666666666669" y="13" width="50.333333333333336" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udb-04-5Sc">
+                                                    <rect key="frame" x="220" y="5" width="78" height="0.0"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlH-5X-Hhr">
+                                                    <rect key="frame" x="303" y="5" width="78" height="0.0"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qar-d4-6x5">
+                                                    <rect key="frame" x="220" y="10" width="78" height="0.0"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RlB-bI-5bF">
+                                                    <rect key="frame" x="303" y="10" width="78" height="0.0"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="udb-04-5Sc" firstAttribute="top" secondItem="5DL-Wa-Jec" secondAttribute="top" constant="5" id="1vq-77-2Y2"/>
+                                                <constraint firstItem="0tD-4B-Teg" firstAttribute="width" secondItem="5DL-Wa-Jec" secondAttribute="width" multiplier="0.5" id="6P9-Pf-YJt"/>
+                                                <constraint firstItem="qar-d4-6x5" firstAttribute="width" secondItem="5DL-Wa-Jec" secondAttribute="width" multiplier="0.2" id="6UL-Ar-Mdi"/>
+                                                <constraint firstItem="mlH-5X-Hhr" firstAttribute="leading" secondItem="udb-04-5Sc" secondAttribute="trailing" constant="5" id="Ddi-d0-2Ka"/>
+                                                <constraint firstItem="mlH-5X-Hhr" firstAttribute="width" secondItem="5DL-Wa-Jec" secondAttribute="width" multiplier="0.2" id="HhU-4B-9fx"/>
+                                                <constraint firstItem="RlB-bI-5bF" firstAttribute="top" secondItem="mlH-5X-Hhr" secondAttribute="bottom" constant="5" id="JOW-qh-r4u"/>
+                                                <constraint firstItem="qar-d4-6x5" firstAttribute="leading" secondItem="0tD-4B-Teg" secondAttribute="trailing" constant="5" id="Mfe-du-Ydh"/>
+                                                <constraint firstItem="udb-04-5Sc" firstAttribute="leading" secondItem="0tD-4B-Teg" secondAttribute="trailing" constant="5" id="OvS-RH-3d4"/>
+                                                <constraint firstItem="0tD-4B-Teg" firstAttribute="leading" secondItem="5DL-Wa-Jec" secondAttribute="leadingMargin" id="bFW-1q-u2u"/>
+                                                <constraint firstItem="RlB-bI-5bF" firstAttribute="leading" secondItem="qar-d4-6x5" secondAttribute="trailing" constant="5" id="iSU-Lo-dnt"/>
+                                                <constraint firstItem="mlH-5X-Hhr" firstAttribute="top" secondItem="5DL-Wa-Jec" secondAttribute="top" constant="5" id="n8s-nu-W3k"/>
+                                                <constraint firstItem="udb-04-5Sc" firstAttribute="width" secondItem="5DL-Wa-Jec" secondAttribute="width" multiplier="0.2" id="nV9-KU-AFF"/>
+                                                <constraint firstItem="RlB-bI-5bF" firstAttribute="width" secondItem="5DL-Wa-Jec" secondAttribute="width" multiplier="0.2" id="qSg-l5-vKr"/>
+                                                <constraint firstItem="0tD-4B-Teg" firstAttribute="centerY" secondItem="5DL-Wa-Jec" secondAttribute="centerY" id="xmM-zQ-ygD"/>
+                                                <constraint firstItem="qar-d4-6x5" firstAttribute="top" secondItem="udb-04-5Sc" secondAttribute="bottom" constant="5" id="y3w-r6-p58"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="NameOutlet" destination="0tD-4B-Teg" id="BUg-zX-Nlu"/>
+                                            <outletCollection property="eventsOutlet" destination="udb-04-5Sc" collectionClass="NSMutableArray" id="nm6-5f-bGh"/>
+                                            <outletCollection property="eventsOutlet" destination="qar-d4-6x5" collectionClass="NSMutableArray" id="iT1-0G-oCj"/>
+                                            <outletCollection property="eventsOutlet" destination="mlH-5X-Hhr" collectionClass="NSMutableArray" id="jeF-lx-cva"/>
+                                            <outletCollection property="eventsOutlet" destination="RlB-bI-5bF" collectionClass="NSMutableArray" id="Dnw-t6-cqd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1525,7 +1574,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2066.40625" y="-186.9140625"/>
+            <point key="canvasLocation" x="1212" y="-709"/>
         </scene>
         <!--Add Athlete View Controller-->
         <scene sceneID="AD1-pk-Oa2">
@@ -1902,7 +1951,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VUW-hb-QhF"/>
+        <segue reference="93V-8F-ffg"/>
         <segue reference="A4F-CX-glK"/>
         <segue reference="0ZE-CH-pSw"/>
     </inferredMetricsTieBreakers>

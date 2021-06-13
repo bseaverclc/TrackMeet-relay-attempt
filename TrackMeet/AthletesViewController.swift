@@ -198,10 +198,19 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
 
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! AthletesWithEventsCell
+        
+        
         let athlete = displayedAthletes[indexPath.row]
-        cell.textLabel?.text = "\(athlete.last), \(athlete.first) (\(athlete.grade))"
-        cell.detailTextLabel?.text = "\(athlete.school)"
+        
+        if let m = meet{
+            cell.configure(ath: athlete, meet: m)
+        }
+        else{
+            cell.configure(ath: athlete)
+        }
+//        cell.textLabel?.text = "\(athlete.last), \(athlete.first) (\(athlete.grade))"
+//        cell.detailTextLabel?.text = "\(athlete.school)"
        
         //print(athlete.grade)
         return cell

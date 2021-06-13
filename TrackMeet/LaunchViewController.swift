@@ -30,6 +30,7 @@ class AppData{
 @available(iOS 13.0, *)
 class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
+    @IBOutlet weak var emailButtonOutlet: UIButton!
     @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var appleButton: UIButton!
     @IBOutlet weak var SignInOutlet: UIButton!
@@ -166,6 +167,84 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
         AppData.allAthletes.sort(by: {$0.last.localizedCaseInsensitiveCompare($1.last) == .orderedAscending})
 
     }
+    
+    @IBAction func emailAction(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Enter Info", message: "", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { (textField) in
+           // textField.autocapitalizationType = .allCharacters
+               textField.placeholder = "email"
+        })
+        alert.addTextField(configurationHandler: { (textField) in
+           // textField.autocapitalizationType = .allCharacters
+               textField.placeholder = "password"
+        })
+        
+        alert.addAction(UIAlertAction(title: "create account", style: .default, handler: { (updateAction) in
+            
+            let email = alert.textFields![0].text!
+            let password = alert.textFields![1].text!
+            if !self.isEmail(em: email){
+                let emailAlert = UIAlertController(title: "Error", message: "Not a valid email", preferredStyle: .alert)
+                emailAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(emailAlert, animated: true, completion: nil)
+            }
+            else if password.count < 6{
+                let passwordAlert = UIAlertController(title: "Error", message: "password not long enough", preferredStyle: .alert)
+                passwordAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(passwordAlert, animated: true, completion: nil)
+            }
+            else{
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let e = error{
+                        let errorAlert = UIAlertController(title: "Error", message: "\(e)", preferredStyle: .alert)
+                        errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(errorAlert, animated: true, completion: nil)
+                    }
+                    else{
+                        self.didSignIn()
+                    }
+                }
+            }
+    }))
+        
+        alert.addAction(UIAlertAction(title: "login", style: .default, handler: { (updateAction) in
+            
+            let email = alert.textFields![0].text!
+            let password = alert.textFields![1].text!
+            if !self.isEmail(em: email){
+                let emailAlert = UIAlertController(title: "Error", message: "Not a valid email", preferredStyle: .alert)
+                emailAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(emailAlert, animated: true, completion: nil)
+            }
+            else if password.count < 6{
+                let passwordAlert = UIAlertController(title: "Error", message: "password not long enough", preferredStyle: .alert)
+                passwordAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(passwordAlert, animated: true, completion: nil)
+            }
+            else{
+                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                  guard let strongSelf = self else { return }
+                    if let e = error{
+                        let errorAlert = UIAlertController(title: "Error", message: "\(e)", preferredStyle: .alert)
+                        errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        strongSelf.present(errorAlert, animated: true, completion: nil)
+                    }
+                    else{
+                        strongSelf.didSignIn()
+                    }
+                  
+                }
+            }
+    }))
+        present(alert, animated: true, completion: nil)
+        }
+    
+    func isEmail(em: String)-> Bool{
+                    let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+                    return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: em)
+        
+    }
+    
     
     @objc private func handleLogInWithAppleIDButtonPress() {
         startSignInWithAppleFlow()
