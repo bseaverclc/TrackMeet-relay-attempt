@@ -88,11 +88,17 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
                 tabItems[i].title = school.inits
                  i+=1
              }
-        //tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
+        
+        if let m = meet{
+            print("\(AppData.mySchool)")
         for a in AppData.allAthletes{
             if AppData.mySchool == a.schoolFull{
                 displayedAthletes.append(a)
             }
+        }
+        }
+        else{
+            tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
         }
         
         
