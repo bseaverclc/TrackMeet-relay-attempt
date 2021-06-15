@@ -88,7 +88,14 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
                 tabItems[i].title = school.inits
                  i+=1
              }
-        tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
+        //tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
+        for a in AppData.allAthletes{
+            if AppData.mySchool == a.schoolFull{
+                displayedAthletes.append(a)
+            }
+        }
+        
+        
         
         print(AppData.schoolsNew)
         print("ViewDidLoad in AthletesViewController")
@@ -97,7 +104,7 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         print("viewDidAppear")
-        tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![selectedTab])
+        //tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![selectedTab])
         tableView.reloadData()
         
     }
