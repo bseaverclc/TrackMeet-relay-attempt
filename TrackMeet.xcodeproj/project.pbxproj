@@ -13,6 +13,7 @@
 		D3258ECC24BD304B00895910 /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3258ECB24BD304B00895910 /* SchoolsViewController.swift */; };
 		D3366838247B08B2008EA70C /* Meet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3366837247B08B2008EA70C /* Meet.swift */; };
 		D34809472675794C0065034F /* AthletesWithEventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34809462675794C0065034F /* AthletesWithEventsCell.swift */; };
+		D348094F2676FC750065034F /* AddSchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D348094E2676FC750065034F /* AddSchoolsViewController.swift */; };
 		D3481B4F24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3481B4E24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift */; };
 		D3514F8525EC46C8005722BB /* AthleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3514F8425EC46C8005722BB /* AthleteTableViewCell.swift */; };
 		D361DB0324731403005EF1A2 /* addAthleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361DB0224731403005EF1A2 /* addAthleteViewController.swift */; };
@@ -74,6 +75,7 @@
 		D3258ECB24BD304B00895910 /* SchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
 		D3366837247B08B2008EA70C /* Meet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meet.swift; sourceTree = "<group>"; };
 		D34809462675794C0065034F /* AthletesWithEventsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthletesWithEventsCell.swift; sourceTree = "<group>"; };
+		D348094E2676FC750065034F /* AddSchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchoolsViewController.swift; sourceTree = "<group>"; };
 		D3481B4E24C0B0AD00963A0C /* AthleteResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteResultsTableViewCell.swift; sourceTree = "<group>"; };
 		D3514F8425EC46C8005722BB /* AthleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteTableViewCell.swift; sourceTree = "<group>"; };
 		D361DB0224731403005EF1A2 /* addAthleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAthleteViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				D3258ECB24BD304B00895910 /* SchoolsViewController.swift */,
 				D3BF359624803BB9000736F8 /* MeetsViewController.swift */,
 				D36BAF83247ABEDF00D71D4A /* AddMeetViewController.swift */,
+				D348094E2676FC750065034F /* AddSchoolsViewController.swift */,
 				D3A0B9D52472EEF70088D664 /* HomeViewController.swift */,
 				D3A0B9D1247248500088D664 /* EventsTableViewController.swift */,
 				D3D2DEEC2471F5CB009C17DD /* EventEditViewController.swift */,
@@ -531,6 +534,7 @@
 				D3DD29B0265093C8002B51A4 /* RelayTableViewCell.swift in Sources */,
 				D3D2DEED2471F5CB009C17DD /* EventEditViewController.swift in Sources */,
 				D3A0B9D2247248500088D664 /* EventsTableViewController.swift in Sources */,
+				D348094F2676FC750065034F /* AddSchoolsViewController.swift in Sources */,
 				D3A0B9D024723FDE0088D664 /* Athlete.swift in Sources */,
 				D3D2DEE92471F5CB009C17DD /* AppDelegate.swift in Sources */,
 				D3A97ADB261772EC00698FF0 /* School.swift in Sources */,

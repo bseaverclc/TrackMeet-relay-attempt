@@ -85,8 +85,10 @@ class AddMeetViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSchoolButton.isHidden = true
-        
+       // addSchoolButton.isHidden = true
+        addSchoolButton.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        addSchoolButton.titleLabel?.minimumScaleFactor = 0.5
         
         // sort the scoring textfields
         individualScoringOutlet.sort(by: {$0.tag < $1.tag})
@@ -145,6 +147,15 @@ class AddMeetViewController: UIViewController, UITableViewDelegate,UITableViewDa
             meetNameOutlet.becomeFirstResponder()
         }
         
+        if let sm = selectedMeet{
+            for school in AppData.schoolsNew{
+                if sm.schools[school.full] != nil{
+                    selectedSchools.append(school)
+                }
+            }
+        }
+        
+        
        
         
 //         eventAthletes = eventAthletes.sorted(by: {$0.last.localizedCaseInsensitiveCompare($1.last) == .orderedAscending})
@@ -163,21 +174,29 @@ class AddMeetViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppData.schoolsNew.count
+        //return AppData.schoolsNew.count
+        return selectedSchools.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        let school = AppData.schoolsNew[indexPath.row].full
-        cell.textLabel?.text = school
-        cell.detailTextLabel?.text = AppData.schoolsNew[indexPath.row].inits
         
-        // highlighting previous selected schools
-        if selectedMeet?.schools[school] != nil{
-            tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition(rawValue: 0) ?? .top)
-           
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        cell.textLabel?.text = selectedSchools[indexPath.row].full
+        cell.detailTextLabel?.text = selectedSchools[indexPath.row].inits
+        
         return cell
+        //Old way of adding schools to a meet
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+//        let school = AppData.schoolsNew[indexPath.row].full
+//        cell.textLabel?.text = school
+//        cell.detailTextLabel?.text = AppData.schoolsNew[indexPath.row].inits
+//
+//        // highlighting previous selected schools
+//        if selectedMeet?.schools[school] != nil{
+//            tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition(rawValue: 0) ?? .top)
+//
+//        }
+//        return cell
         
     }
     
@@ -200,15 +219,15 @@ class AddMeetViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
     func getSchools(){
-        if let selectedPaths = tableView.indexPathsForSelectedRows{
-                          //print(selectedPaths)
-                          for path in selectedPaths{
-                            selectedSchools.append(AppData.schoolsNew[path.row])
+//        if let selectedPaths = tableView.indexPathsForSelectedRows{
+//                          //print(selectedPaths)
+//                          for path in selectedPaths{
+//                            selectedSchools.append(AppData.schoolsNew[path.row])
                             
 //                            let selectedSchoolKey = schoolKeys[path.row]
 //                            selectedSchools[selectedSchoolKey] = AppData.schools[selectedSchoolKey]
-                          }
-                      }
+//                          }
+//                      }
     }
     
     func showAlert(errorMessage:String){
@@ -238,8 +257,8 @@ class AddMeetViewController: UIViewController, UITableViewDelegate,UITableViewDa
             }
         }
         }
-        selectedSchools.removeAll()
-        getSchools()
+        //selectedSchools.removeAll()
+        //getSchools()
         if selectedSchools.count == 0{
             showAlert(errorMessage: "You have to have at least 1 school")
             return
@@ -650,5 +669,25 @@ class AddMeetViewController: UIViewController, UITableViewDelegate,UITableViewDa
         view.endEditing(true)
      // resignFirstResponder()
     }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddSchoolsSegue"{
+        let nvc = segue.destination as! AddSchoolsViewController
+            if let sm = selectedMeet{
+                nvc.selectedMeet = sm
+            }
+            nvc.selectedSchools = selectedSchools
+        }
+    }
+    
+    @IBAction func unwindFromAddSchools( _ seg: UIStoryboardSegue) {
+        let pvc = seg.source as! AddSchoolsViewController
+        selectedSchools = pvc.selectedSchools
+        tableView.reloadData()
+        
+    }
+    
 }
 
