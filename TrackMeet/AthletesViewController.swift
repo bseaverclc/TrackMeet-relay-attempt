@@ -31,7 +31,7 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
     var schools = [School]()
     var meet : Meet?
     var pvcScreenTitle = ""
-    var selectedTab = 0
+    var selectedTab = -1
    // var meets : [Meet]!
     
     override func viewDidLoad() {
@@ -89,17 +89,17 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
                  i+=1
              }
         
-        if let m = meet{
-            print("\(AppData.mySchool)")
-        for a in AppData.allAthletes{
-            if AppData.mySchool == a.schoolFull{
-                displayedAthletes.append(a)
-            }
-        }
-        }
-        else{
-            tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
-        }
+//        if let m = meet{
+//            print("\(AppData.mySchool)")
+//        for a in AppData.allAthletes{
+//            if AppData.mySchool == a.schoolFull{
+//                displayedAthletes.append(a)
+//            }
+//        }
+//        }
+//        else{
+//            tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
+//        }
         
         
         
@@ -110,7 +110,24 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         print("viewDidAppear")
-        //tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![selectedTab])
+        if selectedTab >= 0{
+        tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![selectedTab])
+        }
+        else{
+        displayedAthletes.removeAll()
+        if let m = meet{
+            print("\(AppData.mySchool)")
+        for a in AppData.allAthletes{
+            if AppData.mySchool == a.schoolFull{
+                displayedAthletes.append(a)
+            }
+        }
+        }
+        
+        else{
+            tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
+        }
+        }
         tableView.reloadData()
         
     }
