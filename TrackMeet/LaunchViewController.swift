@@ -37,6 +37,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
     @IBOutlet weak var QuickMeetLabel: UILabel!
     @IBOutlet weak var nameOutlet: UILabel!
     
+    @IBOutlet weak var removeAccountOutlet: UIButton!
     @IBOutlet weak var logOutOutlet: UIButton!
     @IBOutlet weak var logInOutlet: GIDSignInButton!
     let authorizationButton = ASAuthorizationAppleIDButton()
@@ -84,7 +85,32 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
     
     
     
+    @IBAction func deleteAccountAction(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Are you sure?", message: "This will permanently this account from the app", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete Account", style: .destructive, handler: { (action) in
+            self.deleteAccount()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func deleteAccount(){
+        let user = Auth.auth().currentUser
 
+        user?.delete { error in
+          if let error = error {
+            print(error)
+          } else {
+            self.nameOutlet.text = "Not Logged in"
+            self.logInOutlet.isHidden = false
+            self.logOutOutlet.isHidden = true
+            self.removeAccountOutlet.isHidden = true
+            self.authorizationButton.isHidden = false
+            self.emailButtonOutlet.isHidden = false
+          }
+        }
+    }
+    
     
     @objc func didSignIn(){
         print("didSignIn being called")
@@ -104,18 +130,23 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
             nameOutlet.text = "\(user.email!)"
             logInOutlet.isHidden = true
             logOutOutlet.isHidden = false
+            removeAccountOutlet.isHidden = false
             authorizationButton.isHidden = true
+            emailButtonOutlet.isHidden = true
         }
        else{
             nameOutlet.text = "Not Logged in"
         logInOutlet.isHidden = false
         logOutOutlet.isHidden = true
+        removeAccountOutlet.isHidden = true
         authorizationButton.isHidden = false
+        emailButtonOutlet.isHidden = false
        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // emailButtonOutlet.isEnabled = true
         logInOutlet.layer.cornerRadius = 20
         NotificationCenter.default.addObserver(self, selector: #selector(didSignIn), name: NSNotification.Name("SuccessfulSignInNotification"), object: nil)
         GIDSignIn.sharedInstance().presentingViewController = self
@@ -128,8 +159,6 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
           authorizationButton.addTarget(self, action: #selector(handleLogInWithAppleIDButtonPress), for: .touchUpInside)
           authorizationButton.cornerRadius = 10
         loginStackView.addArrangedSubview(authorizationButton)
-        
-    
         
         
         print("view is loading")
@@ -169,6 +198,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
     }
     
     @IBAction func emailAction(_ sender: UIButton) {
+        print("email button hit")
         let alert = UIAlertController(title: "Enter Info", message: "", preferredStyle: .alert)
         alert.addTextField(configurationHandler: { (textField) in
            // textField.autocapitalizationType = .allCharacters
@@ -236,6 +266,11 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
                 }
             }
     }))
+        alert.addAction(UIAlertAction(title: "forgot password", style: .default, handler: { (action) in
+            self.resetPassword()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
         }
     
@@ -243,6 +278,28 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
                     let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
                     return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: em)
         
+    }
+    
+    func resetPassword(){
+        let alert = UIAlertController(title: "reset password", message: "enter email address", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "email address"
+        }
+        alert.addAction((UIAlertAction(title: "send reset email", style: .default, handler: { (action) in
+            Auth.auth().sendPasswordReset(withEmail: alert.textFields![0].text!) { error in
+                var message = ""
+                if let error = error{
+                    message = "\(error)"
+                }
+                else{
+                    message = "password reset email has been sent"
+                }
+                let confirm = UIAlertController(title: message, message: "", preferredStyle: .alert)
+                confirm.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(confirm, animated: true, completion: nil)
+            }
+        })))
+        present(alert, animated: true, completion: nil)
     }
     
     
@@ -410,13 +467,17 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
             nameOutlet.text = "Welcome \(user.displayName!)"
             logInOutlet.isHidden = true
             logOutOutlet.isHidden = false
+            removeAccountOutlet.isHidden = false
             authorizationButton.isHidden = true
+            emailButtonOutlet.isHidden = true
         }
        else{
             nameOutlet.text = "Not Logged in"
         logInOutlet.isHidden = false
         logOutOutlet.isHidden = true
+        removeAccountOutlet.isHidden = true
         authorizationButton.isHidden = false
+        emailButtonOutlet.isHidden = false
         AppData.mySchool = ""
         AppData.coach = ""
        }

@@ -66,19 +66,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vVe-fd-cao">
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vVe-fd-cao">
                                 <rect key="frame" x="0.0" y="670" width="390" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZD-gj-8rK">
-                                        <rect key="frame" x="94.666666666666686" y="0.0" width="201" height="33.333333333333336"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <state key="normal" title="Log in with email"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZD-gj-8rK">
+                                        <rect key="frame" x="128.66666666666666" y="0.0" width="132.99999999999997" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Log in with email">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="emailAction:" destination="iXb-bg-nrS" eventType="touchUpInside" id="gHf-QU-2iL"/>
+                                            <action selector="emailAction:" destination="iXb-bg-nrS" eventType="touchUpInside" id="sGs-4T-EcY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xs7-wk-5XH" customClass="GIDSignInButton">
-                                        <rect key="frame" x="97.666666666666686" y="43.333333333333371" width="195" height="33.333333333333343"/>
+                                        <rect key="frame" x="97.666666666666686" y="36.666666666666629" width="195" height="30"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
@@ -86,13 +88,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM7-aR-lSv">
-                                        <rect key="frame" x="169" y="86.666666666666629" width="52" height="33.333333333333343"/>
+                                        <rect key="frame" x="169" y="81.666666666666629" width="52" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <state key="normal" title="Log out">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="logOutAction:" destination="iXb-bg-nrS" eventType="touchUpInside" id="DvX-9q-6CS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ev-aY-IE7">
+                                        <rect key="frame" x="143" y="116" width="104" height="4"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <state key="normal" title="Delete account">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteAccountAction:" destination="iXb-bg-nrS" eventType="touchUpInside" id="jbh-GR-7CX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -126,6 +138,7 @@
                         <outlet property="logOutOutlet" destination="xM7-aR-lSv" id="ZPu-2a-wnR"/>
                         <outlet property="loginStackView" destination="vVe-fd-cao" id="Ab4-GI-S9U"/>
                         <outlet property="nameOutlet" destination="Dhs-Ye-dax" id="LIn-5v-wYU"/>
+                        <outlet property="removeAccountOutlet" destination="5Ev-aY-IE7" id="Nqe-oo-e2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZD-Rd-PwU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
