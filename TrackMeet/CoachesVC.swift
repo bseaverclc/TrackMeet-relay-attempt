@@ -11,10 +11,15 @@ import UIKit
 class CoachesVC: UITableViewController {
 
     var school :  School!
+    var canEditAthletes: Bool!
 
+    @IBOutlet weak var addButtonOutlet: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !canEditAthletes{
+            addButtonOutlet.isEnabled = false
+        }
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -71,13 +76,14 @@ class CoachesVC: UITableViewController {
     }
    
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if canEditAthletes{return true}
+        else{return false}
     }
-    */
+    
 
     
     // Override to support editing the table view.

@@ -80,7 +80,7 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
         checkEditAthletes()
         
         if !canEditAthletes{
-            stackView.isHidden = true
+            uploadButtonOutlet.isHidden = true
         }
         let tabItems = tabBarOutlet.items!
              var i = 0
@@ -115,14 +115,21 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
         }
         else{
         displayedAthletes.removeAll()
-        if let m = meet{
+            
+            if let m = meet{
+                if Meet.canCoach{
             print("\(AppData.mySchool)")
         for a in AppData.allAthletes{
             if AppData.mySchool == a.schoolFull{
                 displayedAthletes.append(a)
             }
         }
+                }
+                else{
+                    tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
+                }
         }
+            
         
         else{
             tabBar(tabBarOutlet, didSelect: tabBarOutlet.items![0])
@@ -444,6 +451,7 @@ class AthletesViewController: UIViewController, UITableViewDelegate, UITableView
         else if segue.identifier == "toCoachesSegue"{
             let nvc = segue.destination as! CoachesVC
             nvc.school = schools[0]
+            nvc.canEditAthletes = canEditAthletes
      
         }
     }
