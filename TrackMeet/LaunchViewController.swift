@@ -598,6 +598,21 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
             AppData.meets.append(Meet(key: snapshot.key, dict: dict))
         })
         
+        ref.child("meets").observe(.childChanged, with: { (snapshot) in
+            
+            let dict = snapshot.value as! [String:Any]
+            var m = Meet(key: snapshot.key, dict: dict)
+            for i in 0..<AppData.meets.count{
+                if AppData.meets[i].name == m.name{
+                    AppData.meets[i] = m;
+                    print("updated meet")
+                    break;
+                }
+            }
+            
+            
+        })
+        
         
         
 //        ref.child("meets").observe(.childRemoved, with: { (snapshot) in
@@ -710,6 +725,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
             
             
             let a = Athlete(key: uid, dict: dict)
+            print("\(a.last) event just changed")
             
            // Data.allAthletes.append(a)
            // ref.child("athletes").child(uid).child("events").

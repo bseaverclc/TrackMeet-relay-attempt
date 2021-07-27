@@ -110,6 +110,15 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
         else{
             addButtonOutlet.isEnabled = false
         }
+        
+        if meet.beenScored[selectedRow]{
+             processOutlet.setTitle("Processed", for: .normal)
+            processOutlet.backgroundColor = UIColor.green
+        }
+        else{
+            processOutlet.setTitle("Process Event", for: .normal)
+            processOutlet.backgroundColor = UIColor.lightGray
+        }
        }
     
     func scaleStuff(){

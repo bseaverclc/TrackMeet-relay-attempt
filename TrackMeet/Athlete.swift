@@ -186,7 +186,11 @@ public class Event:Codable{
         uid = key
         name = dict["name"] as! String
         level = dict["level"] as! String
-        mark = dict["mark"] as! Float
+        if let m = dict["mark"]{
+            mark = m as! Float;
+        }
+        else {mark = 0.0;}
+        
         markString = dict["markString"] as! String
         if let p = dict["place"] as? Int{
         place = p

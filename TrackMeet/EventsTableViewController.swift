@@ -22,6 +22,15 @@ class EventsTableViewController: UITableViewController {
     
     //var segues = ["relay4x800", "relay4x100","m100"]
  
+    override func viewWillAppear(_ animated: Bool) {
+        for m in AppData.meets{
+            if m.uid == meet.uid{
+                meet = m;
+                print("updated the meet variable")
+                break;
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +38,14 @@ class EventsTableViewController: UITableViewController {
         self.title = "\(meet.name) Events"
         if !Meet.canManage{
             addButtonOutlet.isEnabled = false
+        }
+        
+        for m in AppData.meets{
+            if m.uid == meet.uid{
+                meet = m;
+                print("updated the meet variable")
+                break;
+            }
         }
         
       
@@ -62,9 +79,11 @@ class EventsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("building the table")
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         cell.backgroundColor = UIColor.white
         cell.textLabel?.text = meet.events[indexPath.row]
+        
         if indexPath.row % 2 != 0{
             cell.backgroundColor = UIColor.lightGray
         }
