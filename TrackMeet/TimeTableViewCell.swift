@@ -53,7 +53,7 @@ public class TimeTableViewCell : UITableViewCell{
            timeOutlet.text = text
            placeOutlet.placeholder = "PL"
            placeOutlet.text = placeText
-        pointsOutlet.text = "\(pointsText) points"
+        pointsOutlet.text = "\(pointsText)"
        }
     
     func configure(text: String, placeholder : String){

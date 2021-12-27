@@ -80,6 +80,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
         if(AppData.userID == "SRrCKcYVC8U6aZTMv0XCYHHR4BG3"){
             AppData.fullAccess = true
         }
+        else{AppData.fullAccess = false}
         //storeToUserDefaults()
     }
     
@@ -605,6 +606,7 @@ class LaunchViewController: UIViewController, ASAuthorizationControllerDelegate,
             for i in 0..<AppData.meets.count{
                 if AppData.meets[i].name == m.name{
                     AppData.meets[i] = m;
+                    
                     print("updated meet")
                     break;
                 }

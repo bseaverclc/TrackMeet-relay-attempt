@@ -146,14 +146,7 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
         eventAthletes = [Athlete]()
         heat1 = [Athlete]()
         heat2 = [Athlete]()
-           if meet.beenScored[selectedRow]{
-                processOutlet.setTitle("Processed", for: .normal)
-               processOutlet.backgroundColor = UIColor.green
-           }
-           else{
-               processOutlet.setTitle("Process Event", for: .normal)
-               processOutlet.backgroundColor = UIColor.lightGray
-           }
+          
           
            
            let fontAttributes2 = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.title3)]
@@ -179,6 +172,16 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                          }
                      }
                  }
+           if meet.beenScored[selectedRow]{
+                processOutlet.setTitle("Processed", for: .normal)
+               processOutlet.backgroundColor = UIColor.green
+               calcPoints()
+           }
+           else{
+               processOutlet.setTitle("Process Event", for: .normal)
+               processOutlet.backgroundColor = UIColor.lightGray
+           }
+           
            sortByMark()
            sortByPlace()
            tableViewOutlet.reloadData()
@@ -878,6 +881,7 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                                           case ("", _): return false    // Lhs is empty
                                           case (_?, ""): return true    // Lhs is not nil, rhs is empty
                                         default:
+                                            // making sure they have the same length
                                            while a!.count < b!.count{a = "0\(a!)"
                                                print(a!)
                                            }
@@ -999,7 +1003,7 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                                     print("Added some points")
                                 }
                             }
-                            event.points = Double(points)/Double(ties)
+                            event.points = Double(Int(Double(points)/Double(ties)*100.0))/100.0
                             
                         }
                         else{event.points = 0}  // if ties somehow = 0
