@@ -48,8 +48,40 @@ class RelayViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 schoolAthletes.append(a)
             }
         }
+        
+//        if let members = theEvent.relayMembers{
+//            for id in members{
+//                for ath in AppData.allAthletes{
+//                    if ath.uid == id{
+//                        runners.append(ath)
+//                        break;
+//                    }
+//                }
+//
+//            }
+//
+//       }
+        
+        
       
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("RelayVC viewWillAppear")
+        runners.removeAll();
+        if let members = theEvent.relayMembers{
+            for id in members{
+                for ath in AppData.allAthletes{
+                    if ath.uid == id{
+                        runners.append(ath)
+                        break;
+                    }
+                }
+            
+            }
+        
+       }
     }
     
     func canEdit()->Bool{

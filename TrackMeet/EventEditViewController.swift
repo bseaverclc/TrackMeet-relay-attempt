@@ -743,6 +743,24 @@ class EventEditViewController: UIViewController, UITableViewDelegate,UITableView
                     
             }
         }
+            for a in heat1{
+                for e in a.events{
+                    if e.name == title  && e.meetName == meet.name{
+                        e.place = nil
+                        a.updateFirebase()
+                    }
+                        
+                }
+            }
+            for a in heat2{
+                for e in a.events{
+                    if e.name == title  && e.meetName == meet.name{
+                        e.place = nil
+                        a.updateFirebase()
+                    }
+                        
+                }
+            }
             meet.beenScored[selectedRow] = false
             meet.updatebeenScoredFirebase()
             processOutlet.backgroundColor = UIColor.lightGray

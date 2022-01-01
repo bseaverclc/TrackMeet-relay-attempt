@@ -52,17 +52,19 @@ class AddAthleteToEventViewController: UIViewController, UITableViewDelegate, UI
 //                                }
 //                            }
 //                        }                    }
-                    if relayEvent{
-                        if a.last == a.school{
-                            displayedAthletes.append(a)
-                        }
-                    }
-                    else{
-                        if a.last != a.school{
-                            displayedAthletes.append(a)
-                        }
-                    }
                     
+                    // attempting to only show relay team for relays
+//                    if relayEvent{
+//                        if a.last == a.school{
+//                            displayedAthletes.append(a)
+//                        }
+//                    }
+//                    else{
+//                        if a.last != a.school{
+//                            displayedAthletes.append(a)
+//                        }
+//                    }
+                    displayedAthletes.append(a)
                 }
             }
           
@@ -281,16 +283,17 @@ class AddAthleteToEventViewController: UIViewController, UITableViewDelegate, UI
             
                 if item.title == a.school{
                     if a.schoolFull.suffix(3) == "(\(meet.gender))"{
-                        if relayEvent{
-                            if a.last == a.school{
-                                displayedAthletes.append(a)
-                            }
-                        }
-                        else{
-                            if a.last != a.school{
-                                displayedAthletes.append(a)
-                            }
-                        }
+                        displayedAthletes.append(a)
+//                        if relayEvent{
+//                            if a.last == a.school{
+//                                displayedAthletes.append(a)
+//                            }
+//                        }
+//                        else{
+//                            if a.last != a.school{
+//                                displayedAthletes.append(a)
+//                            }
+//                        }
                     
                     }
                 }

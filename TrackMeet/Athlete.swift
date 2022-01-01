@@ -72,7 +72,7 @@ public class Athlete : Codable{
         let ref = Database.database().reference().child(uid!)
         e.uid = ref.childByAutoId().key
         print("added event with key \(e.uid!)")
-        updateFirebase()
+        //updateFirebase()
     }
     
     func getEvent(eventName: String, meetName: String) -> Event?{
